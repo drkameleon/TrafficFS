@@ -1,0 +1,57 @@
+# Project: TrafficFS
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = 
+OBJ  = tfs_main.o tfs_dllist.o tfs_dlnode.o tfs_circulation.o tfs_vehicle.o tfs_utils.o tfs_menu.o tfs_menuitem.o tfs_random.o tfs_location.o $(RES)
+LINKOBJ  = tfs_main.o tfs_dllist.o tfs_dlnode.o tfs_circulation.o tfs_vehicle.o tfs_utils.o tfs_menu.o tfs_menuitem.o tfs_random.o tfs_location.o $(RES)
+LIBS =  -L"C:/Dev-Cpp/lib"  
+INCS =  -I"C:/Dev-Cpp/include" 
+CXXINCS =  -I"C:/Dev-Cpp/lib/gcc/mingw32/3.4.2/include"  -I"C:/Dev-Cpp/include/c++/3.4.2/backward"  -I"C:/Dev-Cpp/include/c++/3.4.2/mingw32"  -I"C:/Dev-Cpp/include/c++/3.4.2"  -I"C:/Dev-Cpp/include" 
+BIN  = TrafficFS.exe
+CXXFLAGS = $(CXXINCS)  
+CFLAGS = $(INCS)  
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before TrafficFS.exe all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o "TrafficFS.exe" $(LIBS)
+
+tfs_main.o: tfs_main.cpp
+	$(CPP) -c tfs_main.cpp -o tfs_main.o $(CXXFLAGS)
+
+tfs_dllist.o: tfs_dllist.cpp
+	$(CPP) -c tfs_dllist.cpp -o tfs_dllist.o $(CXXFLAGS)
+
+tfs_dlnode.o: tfs_dlnode.cpp
+	$(CPP) -c tfs_dlnode.cpp -o tfs_dlnode.o $(CXXFLAGS)
+
+tfs_circulation.o: tfs_circulation.cpp
+	$(CPP) -c tfs_circulation.cpp -o tfs_circulation.o $(CXXFLAGS)
+
+tfs_vehicle.o: tfs_vehicle.cpp
+	$(CPP) -c tfs_vehicle.cpp -o tfs_vehicle.o $(CXXFLAGS)
+
+tfs_utils.o: tfs_utils.cpp
+	$(CPP) -c tfs_utils.cpp -o tfs_utils.o $(CXXFLAGS)
+
+tfs_menu.o: tfs_menu.cpp
+	$(CPP) -c tfs_menu.cpp -o tfs_menu.o $(CXXFLAGS)
+
+tfs_menuitem.o: tfs_menuitem.cpp
+	$(CPP) -c tfs_menuitem.cpp -o tfs_menuitem.o $(CXXFLAGS)
+
+tfs_random.o: tfs_random.cpp
+	$(CPP) -c tfs_random.cpp -o tfs_random.o $(CXXFLAGS)
+
+tfs_location.o: tfs_location.cpp
+	$(CPP) -c tfs_location.cpp -o tfs_location.o $(CXXFLAGS)
